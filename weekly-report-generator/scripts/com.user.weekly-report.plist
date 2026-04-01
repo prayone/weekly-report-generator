@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 任务标识 -->
+    <key>Label</key>
+    <string>com.user.weekly-report</string>
+
+    <!-- 要执行的程序 -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/wpp/ai/cline-skills/auto-weekly-report.sh</string>
+    </array>
+
+    <!-- 工作目录 -->
+    <key>WorkingDirectory</key>
+    <string>/Users/wpp/ai/cline-skills</string>
+
+    <!-- 定时执行：每周四上午 09:52 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>4</integer>  <!-- 4 = 周四 (0=周日, 1=周一, ..., 6=周六) -->
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>52</integer>
+    </dict>
+
+    <!-- 标准输出日志 -->
+    <key>StandardOutPath</key>
+    <string>/Users/wpp/ai/cline-skills/auto-weekly-report-stdout.log</string>
+
+    <!-- 错误输出日志 -->
+    <key>StandardErrorPath</key>
+    <string>/Users/wpp/ai/cline-skills/auto-weekly-report-stderr.log</string>
+
+    <!-- 保持任务运行（即使失败也不要禁用） -->
+    <key>KeepAlive</key>
+    <false/>
+
+    <!-- 任务失败后是否重启 -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- 环境变量 -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+</dict>
+</plist>
