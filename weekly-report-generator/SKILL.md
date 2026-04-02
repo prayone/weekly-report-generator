@@ -1,6 +1,14 @@
 ---
 name: weekly-report-generator
-description: "Use this skill to generate weekly reports from git commit logs. Automatically analyzes git history, categorizes work, and formats a professional weekly report."
+description: |
+  周报生成器是一款基于 AI 的智能周报自动化工具，能够从本地 Git 提交记录、工作描述、工作截图中自动提取信息，
+  生成指定时间（默认本周）的高质量、模块化、业务化的周报文档，并自动发送到飞书（可设置定时发送）。
+  彻底解放双手，让写周报从"痛苦的回忆作业"变成"一句话的事"。
+
+  核心亮点：
+  1. 一键生成：一句"按照skill帮我生成周报"，剩下的全部自动完成
+  2. 零配置使用：无需手动统计代码、无需对接gitlab/github地址、无需整理提交记录、直接扫描本地所有文件夹
+  3. 智能发送：生成后自动推送到飞书，无需手动操作
 ---
 
 # 周报生成器 Skill
@@ -33,7 +41,7 @@ description: "Use this skill to generate weekly reports from git commit logs. Au
 1. 使用自动周报脚本采集数据：
 
    ```bash
-   /Users/wpp/ai/cline-skills/auto-weekly-report.sh
+   /Users/ai/cline-skills/auto-weekly-report.sh
    ```
 
 2. 该脚本会自动：
@@ -83,7 +91,7 @@ description: "Use this skill to generate weekly reports from git commit logs. Au
 
 **重要**：
 
-1. 周报文件统一保存在 `/Users/wpp/ai/cline-skills/` 目录下
+1. 周报文件统一保存在 `/Users/ai/cline-skills/` 目录下
 2. AI优化后的周报将在步骤5统一发送到飞书
 
 按照以下标准模板格式化周报：
@@ -160,7 +168,7 @@ description: "Use this skill to generate weekly reports from git commit logs. Au
 1. **直接执行发送命令**：
 
    ```bash
-   /Users/wpp/ai/cline-skills/send-to-feishu.sh /Users/wpp/ai/cline-skills/weekly-report-YYYYMMDD.md
+   /Users/ai/cline-skills/send-to-feishu.sh /Users/ai/cline-skills/weekly-report-YYYYMMDD.md
    ```
 
 2. **显示发送结果**：
@@ -320,7 +328,7 @@ AI：好的，我将使用 weekly-report-generator skill 为你生成周报。
     首先确认几个参数：
 
     1. 时间范围：本周（2026-03-23 周一 到今天 2026-03-24 周二）
-    2. Git 仓库：当前目录 /Users/wpp/project/zhdf
+    2. Git 仓库：当前目录 /Users/project/zhdf
     3. 分支：当前分支 main
     4. 提交者：当前用户 (你的用户名)
     5. 输出格式：Markdown
