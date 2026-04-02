@@ -16,7 +16,15 @@ log() {
 }
 
 # 配置项目根目录，将自动扫描该目录下所有 Git 仓库
-PROJECT_ROOT="/Users/wpp/project/zhdf"
+# 可通过环境变量 PROJECT_ROOT 自定义，或直接修改下面的默认值
+PROJECT_ROOT="${PROJECT_ROOT:-/your/path}"
+
+# 检查路径是否有效
+if [ ! -d "$PROJECT_ROOT" ]; then
+    log "❌ 错误：项目根目录不存在：$PROJECT_ROOT"
+    log "请设置环境变量 PROJECT_ROOT 或修改脚本中的 PROJECT_ROOT 变量"
+    exit 1
+fi
 
 # 自动查找所有 Git 仓库
 log "扫描 Git 仓库：$PROJECT_ROOT"

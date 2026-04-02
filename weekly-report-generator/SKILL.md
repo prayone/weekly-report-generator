@@ -37,10 +37,11 @@ description: "Use this skill to generate weekly reports from git commit logs. Au
    ```
 
 2. 该脚本会自动：
-   - 扫描 `/Users/wpp/project/zhdf` 目录下所有 54 个 Git 仓库
+   - 扫描 `PROJECT_ROOT` 环境变量指定的目录（或脚本中配置的默认路径）下所有 Git 仓库
    - 统计本周一到今天的所有提交记录
    - 统计代码变更量（增加/删除行数）
    - 提取提交信息用于生成工作内容
+   - **首次使用需要配置**：编辑脚本设置 `PROJECT_ROOT` 变量为你的项目目录路径
 
 3. 提取关键数据：
    - 提交次数
