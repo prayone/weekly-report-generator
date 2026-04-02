@@ -7,7 +7,7 @@
 # 不使用 set -e，避免在某个仓库出错时整个脚本退出
 
 # 配置区
-WORK_DIR="/Users/wpp/ai/cline-skills"
+WORK_DIR="/Users/ai/cline-skills"
 LOG_FILE="$WORK_DIR/auto-weekly-report.log"
 
 # 记录日志函数

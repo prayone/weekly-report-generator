@@ -10,7 +10,7 @@ APP_SECRET="your_app_secret"   # 飞书应用 App Secret
 RECEIVE_ID="your_open_id"      # 接收者的 open_id
 # -----------------------------------------
 
-REPORT_FILE="${1:-/Users/wpp/ai/cline-skills/$(ls /Users/wpp/ai/cline-skills/weekly-report-*.md 2>/dev/null | sort | tail -1 | xargs basename 2>/dev/null)}"
+REPORT_FILE="${1:-/Users/ai/cline-skills/$(ls /Users/ai/cline-skills/weekly-report-*.md 2>/dev/null | sort | tail -1 | xargs basename 2>/dev/null)}"
 
 # 检查配置
 if [[ -z "$APP_ID" || -z "$APP_SECRET" || -z "$RECEIVE_ID" ]]; then
